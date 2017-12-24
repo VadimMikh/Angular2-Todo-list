@@ -3,5 +3,6 @@
         New task:
         <input type="text" placeholder="Add task" [(ngModel)]="newtask">
     </label>
-    <p>{{newtask}}</p>
+    <button (click)="addTask()">Add</button>
+    <p *ngIf="newtask">Сделать: {{newtask}}</p>
 </div>
