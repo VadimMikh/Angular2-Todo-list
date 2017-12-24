@@ -5,4 +5,5 @@
     </label>
     <button (click)="addTask()">Add</button>
     <p *ngIf="newtask">Сделать: {{newtask}}</p>
+    <app-todo-input-list [tasksList]="tasks"></app-todo-input-list>
 </div>

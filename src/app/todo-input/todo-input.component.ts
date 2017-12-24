@@ -12,10 +12,11 @@ export class TodoInputComponent implements OnInit {
 
     tasks: Task[] = [];
 
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataService) {}
 
     ngOnInit(): void {
         // throw new Error('Method not implemented.');
+        this.tasks = this.dataService.getTasks();
     }
 
     newtask:string = '';
@@ -25,8 +26,7 @@ export class TodoInputComponent implements OnInit {
             name: this.newtask,
             done: false
         };
-        console.log(item);
-        if (this.newtask !== '') this.dataService.addTask({item: Task});
+        if (this.newtask !== '') this.dataService.addTask(item);
         this.newtask = '';
 
         this.tasks = this.dataService.getTasks();
