@@ -8,10 +8,14 @@ export class DataService {
 
   addTask(task): void {
     this.data.push(task);
-    // console.log(this.data);
+    localStorage.setItem('tasks', JSON.stringify(this.data));
   }
 
   getTasks(): Task[] {
+    let localTasks = JSON.parse(localStorage.getItem('tasks'));
+    if (localTasks !== '') {
+      this.data = localTasks;
+    }
     return this.data;
   }
 
@@ -20,7 +24,9 @@ export class DataService {
     let newAr = this.data.filter(function (el) {
       return el.id !== cur;
     });
-    return this.data = newAr;
+    this.data = newAr;
+    localStorage.setItem('tasks', JSON.stringify(this.data));
+    return this.data;
   }
 
   constructor() { }

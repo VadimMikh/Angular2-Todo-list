@@ -1,0 +1,9 @@
+.mat-list {
+    max-width: 500px;
+}
+.mat-list-item {
+    border-bottom: 1px solid currentColor;
+}
+.mat-list-item /deep/.mat-list-item-content {
+    justify-content: space-between;
+}

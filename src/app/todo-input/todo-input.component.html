@@ -1,9 +1,8 @@
 <div>
-    <label>
-        New task:
-        <input type="text" placeholder="Add task" [(ngModel)]="newtask">
-    </label>
-    <button (click)="addTask()">Add</button>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="New task" value="" [(ngModel)]="newtask">
+    </mat-form-field>
+    <button (click)="addTask()" mat-button>Add</button>
     <p *ngIf="newtask">Сделать: {{newtask}}</p>
     <app-todo-input-list [tasksList]="tasks" (removeItem)="removeItem($event)"></app-todo-input-list>
 </div>

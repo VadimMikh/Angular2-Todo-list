@@ -6,6 +6,7 @@ import { TodoInputComponent } from './todo-input/todo-input.component';
 import { FormsModule } from '@angular/forms';
 import { TodoInputListComponent } from './todo-input-list/todo-input-list.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatListModule, MatButtonModule, MatInputModule} from '@angular/material';
 
 
 @NgModule({
@@ -17,7 +18,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatListModule,
+    MatButtonModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
