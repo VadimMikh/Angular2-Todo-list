@@ -4,6 +4,45 @@
 .mat-list-item {
     border-bottom: 1px solid currentColor;
 }
+.mat-list .mat-button {
+    min-width: 0;
+    padding: 0 10px;
+}
+.mat-list .mat-button.done-button {
+    color: #8BC34A;
+    opacity: .75;
+    transition: .25s;
+}
+.mat-list .mat-button.done-button:hover {
+    opacity: 1;
+}
+.mat-list .done .mat-button.done-button {
+    color: inherit;
+    opacity: .5;
+}
+.mat-list .done .mat-button.done-button:hover {
+    opacity: 1;
+}
 .mat-list-item /deep/.mat-list-item-content {
     justify-content: space-between;
+}
+.mat-list-item /deep/.mat-list-item-content h4 {
+    position: relative;
+}
+.mat-list-item /deep/.mat-list-item-content h4:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -10%;
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    transition: .25s;
+}
+.mat-list-item.done /deep/.mat-list-item-content h4:before {
+    width: 120%;
+}
+.mat-list-item.done /deep/.mat-list-item-content h4 {
+    opacity: .5;
 }

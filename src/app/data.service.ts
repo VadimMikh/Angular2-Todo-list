@@ -29,6 +29,18 @@ export class DataService {
     return this.data;
   }
 
+  changeTaskStatus(id:number): any {
+     let newAr = this.data.map(function (el) {
+       if (el.id === id) {
+         el.done = !el.done;
+       }
+       return el;
+     });
+     this.data = newAr;
+     localStorage.setItem('tasks', JSON.stringify(this.data));
+     return this.data;
+  }
+
   constructor() { }
 
 }

@@ -16,6 +16,11 @@ export class TodoInputListComponent implements OnInit {
     this.removeItem.emit(id);
   }
 
+  @Output() changeStatus = new EventEmitter<number>();
+  toggle(id:number) {
+    this.changeStatus.emit(id);
+  }
+
   ngOnInit() {
   }
 

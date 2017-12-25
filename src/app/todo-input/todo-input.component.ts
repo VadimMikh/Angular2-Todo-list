@@ -36,5 +36,13 @@ export class TodoInputComponent implements OnInit {
     removeItem(id:number) {
         this.tasks = this.dataService.removeTask(id);
     }
+
+    changeStatus(id:number) {
+        this.tasks = this.dataService.changeTaskStatus(id);
+    }
+
+    submitTask(e) {
+        if (e.keyCode === 13) this.addTask();
+    }
   
 }
