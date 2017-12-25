@@ -1,3 +1,3 @@
 export class Task {
-    constructor(public name: string, public done: boolean) { }
+    constructor(public id: number, name: string, public done: boolean) { }
 }

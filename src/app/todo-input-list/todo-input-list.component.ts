@@ -1,22 +1,22 @@
-import { Input, Component, OnInit } from '@angular/core';
-import {TodoInputComponent} from '../todo-input/todo-input.component';
+import {Input, Component, OnInit, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-todo-input-list',
   templateUrl: './todo-input-list.component.html',
   styleUrls: ['./todo-input-list.component.css'],
-  providers: [TodoInputComponent]
 })
 export class TodoInputListComponent implements OnInit {
 
   @Input() tasksList;
 
-  constructor(private todoInputComponennt: TodoInputComponent) { }
+  constructor() { }
 
-  testList = this.todoInputComponennt.tasks;
+  @Output() removeItem = new EventEmitter<number>();
+  remove(id:number) {
+    this.removeItem.emit(id);
+  }
 
   ngOnInit() {
-    console.log(this.testList);
   }
 
 }

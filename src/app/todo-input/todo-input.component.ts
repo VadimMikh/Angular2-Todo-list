@@ -23,6 +23,7 @@ export class TodoInputComponent implements OnInit {
 
     addTask(): void {
         let item = {
+            id: new Date().getTime(),
             name: this.newtask,
             done: false
         };
@@ -30,6 +31,10 @@ export class TodoInputComponent implements OnInit {
         this.newtask = '';
 
         this.tasks = this.dataService.getTasks();
+    }
+
+    removeItem(id:number) {
+        this.tasks = this.dataService.removeTask(id);
     }
   
 }

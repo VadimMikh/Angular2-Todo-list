@@ -2,7 +2,7 @@
   <ul>
     <li *ngFor="let item of tasksList">
       <span>{{item.name}}</span>
-      <a href="#">Remove</a>
+      <a href="#" (click)="remove(item.id)">Remove</a>
     </li>
   </ul>
 </div>
