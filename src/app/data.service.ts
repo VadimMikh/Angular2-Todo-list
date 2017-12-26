@@ -6,14 +6,16 @@ export class DataService {
 
   private data: Task[] = [];
 
-  addTask(task): void {
+  addTask(task) {
+    console.log(this.data);
     this.data.push(task);
     localStorage.setItem('tasks', JSON.stringify(this.data));
   }
 
   getTasks(): Task[] {
+    console.log(this.data);
     let localTasks = JSON.parse(localStorage.getItem('tasks'));
-    if (localTasks !== '') {
+    if (localTasks) {
       this.data = localTasks;
     }
     return this.data;

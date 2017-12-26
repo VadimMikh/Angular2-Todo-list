@@ -3,6 +3,6 @@
         <input matInput placeholder="New task" value="" [(ngModel)]="newtask" (keydown)="submitTask($event)">
     </mat-form-field>
     <button (click)="addTask()" mat-button>Add</button>
-    <p *ngIf="newtask">Сделать: {{newtask}}</p>
+    <p *ngIf="newtask" class="tool">Сделать: {{newtask}}</p>
     <app-todo-input-list [tasksList]="tasks" (removeItem)="removeItem($event)" (changeStatus)="changeStatus($event)"></app-todo-input-list>
 </div>

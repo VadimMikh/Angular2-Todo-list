@@ -1,7 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body {
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 .main-heading {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
 }
